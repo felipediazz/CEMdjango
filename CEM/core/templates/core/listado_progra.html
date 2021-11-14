@@ -52,8 +52,6 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{% url 'listado_progra' %}"><i class="fas fa-headphones"></i> Listado</a>
                     <a class="dropdown-item" href="{% url 'regprogramas' %}"><i class="fab fa-playstation"></i> Registrar</a>
-                    <a class="dropdown-item" href=""><i class="fas fa-gamepad"></i> Modificar</a>
-                  <a class="dropdown-item" href=""><i class="fas fa-dice-one"></i>JUJU</a>
                 </div>
               </li>
               <li class="nav-item active">
@@ -85,70 +83,13 @@
                   <a class="dropdown-item" href=""><i class="fas fa-list-ol"></i> Listado</a>
                 </div>
               </li>
-            </ul>
-    
-    
-            <a href="" role="button" class="btn btn-light mr-sm-4">
-              <i class="fas fa-user"></i>
-              Iniciar Sesión
-            </a>
-    
-            <a href="" role="button" class="btn btn-light mr-sm-4">
-              <i class="fas fa-jedi"></i>
-              Registrarse
-            </a>
-    
-            <p> </p>
-    
-            <input type="search" id="input-search" placeholder="Buscar . . .">
-            <button type="button" class="btn btn-light mr-sm-4"><i class="fas fa-search"></i></button>
-    
-            <div class="content-search">
-              <div class="content-table">
-                <table id="table">
-                  <thead>
-                    <tr>
-                      <td></td>
-                    </tr>
-                  </thead>
-    
-                  <tbody>
-                    <tr>
-                      <td><a href="">Consolas</a></td>
-                    </tr>
-    
-                    <tr>
-                      <td><a href="">Funko pop's</a></td>
-                    </tr>
-    
-                    <tr>
-                      <td><a href="">Perifericos</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="">Videouegos</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="">Detalles</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="">Wiki Ghibli</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="">Wiki Animes</a></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+            </ul>     
+
           </div>
     
         </nav>
       </div>
     
-      <p></p>
-    
-      <!--TERMINO MENU-->
-
   <!--TERMINO MENU-->
 
 <h1>LISTADO PROGRAMAS</h1>
@@ -179,7 +120,7 @@
             <td>{{ p.pais}}</td>
             <td>
                 <a href="{% url 'modificar_programa' p.idPrograma %}">Modificar</a>
-                <a href="#" onclick="confirmarEliminacion({{p.idPrograma}})">Eliminar</a>
+                <a href="#" onclick="confirmarEliminacion({idPrograma})">Eliminar</a>
             </td>
         </tr>
 
