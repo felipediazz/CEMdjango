@@ -3,6 +3,13 @@ from .models import Calificaciones, Programas
 from .forms import CalificacionesForm, ProgramasForm
 # Create your views here.
 
+
+#pagina principal
+def index(request):
+   return render(request, 'core/index.html')
+
+
+
 def regprogramas(request):
     data = {
         'form':ProgramasForm()
