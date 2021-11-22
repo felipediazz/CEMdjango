@@ -30,6 +30,13 @@ def listado_programa(request):
     }
     return render(request, 'core/listado_progra.html', data)
 
+def listado_postu (request):
+    programas_filtrados = Programas.objects.filter(estado='Disponible')
+    data = {
+        'programas_filtrados':programas_filtrados
+    }
+    return render(request, 'core/listado_postu.html', data)
+
 def modificar_programa(request, id):
     programa = Programas.objects.get(idPrograma=id)
     data = {
