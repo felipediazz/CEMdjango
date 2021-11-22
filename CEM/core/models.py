@@ -1,7 +1,10 @@
 from django.db import models
 
 # Create your models here.
-
+programa_estado = [
+    ('Disponible', 'Disponible'),
+    ('No disponible', 'No disponible')
+]
 
 class Programas(models.Model):
     idPrograma = models.IntegerField(primary_key=True, verbose_name='Id de programa')
@@ -10,7 +13,8 @@ class Programas(models.Model):
     fechaInicio = models.DateField(verbose_name='Fecha inicio del programa')
     fechaFin = models.DateField(verbose_name='Fecha termino del programa')
     asignatura = models.CharField(max_length=50, verbose_name='Nombre de la asignatura')
-    estado = models.CharField(max_length=50, verbose_name='Indicar estado disponible o no disponible')
+    estado = models.CharField(max_length=50, verbose_name='Indicar estado disponible o no disponible',null=False,blank=False,
+                                choices=programa_estado, default='Disponible')
     institucion = models.CharField(max_length=200, verbose_name='Nombre de la institucion')
     pais = models.CharField(max_length=200, verbose_name='Pais de la institucion')
 
