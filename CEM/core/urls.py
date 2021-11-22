@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib import admin
-from .views import index ,regprogramas, listado_programa, modificar_programa, eliminar_programa, listado_notas, regcalificaciones, listado_postu
+from .views import index ,regprogramas, listado_programa, modificar_programa, eliminar_programa, listado_notas, regcalificaciones, listado_postu, postular
 
 urlpatterns = [
     path('', index, name="index"),
@@ -10,5 +10,6 @@ urlpatterns = [
     path('eliminar-programa/<id>/', eliminar_programa, name="eliminar_programa"),
     path('listado-calificaciones/', listado_notas, name="listado_notas" ),
     path('registro-calificaciones/', regcalificaciones, name="regcalificaciones"),
-    path('listado_postular/', listado_postu, name="listado_postu")
+    path('listado_postular/', listado_postu, name="listado_postu"),
+    path('postulacion/<id>/', postular, name="postular")
 ]

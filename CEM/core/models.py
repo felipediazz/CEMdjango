@@ -5,6 +5,18 @@ programa_estado = [
     ('Disponible', 'Disponible'),
     ('No disponible', 'No disponible')
 ]
+sexo = [
+    ('Femenino', 'Femenino'),
+    ('Masculino', 'Masculino')
+]
+
+estado_civil = [
+    ('Soltero','Soltero'),
+    ('Casado','Casado'),
+    ('Separado','Separado'),
+    ('Viudo','Viudo'),
+    ('Otro','Otro')
+]
 
 class Programas(models.Model):
     idPrograma = models.IntegerField(primary_key=True, verbose_name='Id de programa')
@@ -36,3 +48,19 @@ class Calificaciones(models.Model):
 
     def __str__(self):
         return self.alumno
+
+class Postulante(models.Model):
+    rut = models.CharField(primary_key=True,max_length=12, verbose_name='Rut postulante')
+    postulante = models.CharField(max_length=200, verbose_name='Nombre del postulante')
+    fechaNaci = models.DateField(verbose_name='Fecha de nacimiento')
+    nacionalidad = models.CharField(max_length=50, verbose_name='Nacionalidad')
+    estadoCivil = models.CharField(max_length=50, verbose_name='Estado civil',null=False,blank=False,choices=estado_civil, default='Soltero')
+    sexo = models.CharField(max_length=50, verbose_name='Indicar sexo',null=False,blank=False,
+                            choices=sexo, default='Masculino')
+    telefono = models.IntegerField(verbose_name='Numero de celular')
+    correo = models.CharField(max_length=200, verbose_name='Correo del postulante')
+    procAcademica = models.CharField(max_length=200, verbose_name='Procedencia academica')
+    programa = models.ForeignKey(Programas, null=True, blank=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.postulante

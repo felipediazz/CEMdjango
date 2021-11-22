@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Programas, Calificaciones
+from .models import Postulante, Programas, Calificaciones
 # Register your models here.
 
 class ProgramaAdmin(admin.ModelAdmin):
@@ -14,3 +14,4 @@ class CalificacionAdmin(admin.ModelAdmin):
 
 admin.site.register(Programas, ProgramaAdmin)
 admin.site.register(Calificaciones, CalificacionAdmin)
+admin.site.register(Postulante)
