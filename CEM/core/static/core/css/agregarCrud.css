@@ -1,11 +1,27 @@
 body{
     background-color: rgb(46, 46, 46);
+    color: black;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+
+    color: white;
+
+}
+
+#titula{
     color: white;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(46, 46, 46);
 }
 
 #logo {
@@ -75,25 +91,13 @@ tbody tr td a:hover{
 }
 
 h2{
-    color: white;
+    color: black;
     text-shadow: 1.5px 1.5px gray;
     font-family: sans-serif;
 }
 
-#contacto1 {
-    font-family: 'Roboto', sans-serif;
-    background-color:brown;
-    color:white;
-    letter-spacing: .05rem;
+
+
+.btn-group, .btn-group-vertical {
+    position: absolute !important;
 }
-
-#cuadro1 {
-    background-color:darkgrey;
-}
-
-#id_imgProducto {
-    color: gray;
-    font-family: sans-serif;
-}
-
-

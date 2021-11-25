@@ -20,6 +20,9 @@
 
     <link rel="stylesheet" href="https://nightly.datatables.net/searchpanes/css/searchPanes.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.bootstrap4.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css"/>
+
     <!--GSAP-->
     <script src= https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js></script>
 
@@ -46,28 +49,28 @@
     
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
-                  <i class="fas fa-comment-dollar"></i>
+                  <i class="fas fa-book"></i>
                   Programas
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'listado_progra' %}"><i class="fas fa-headphones"></i> Listado</a>
-                    <a class="dropdown-item" href="{% url 'regprogramas' %}"><i class="fab fa-playstation"></i> Registrar</a>
+                    <a class="dropdown-item" href="{% url 'listado_progra' %}"><i class="fas fa-list"></i> Listado</a>
+                    <a class="dropdown-item" href="{% url 'regprogramas' %}"><i class="fas fa-plus-square"></i> Registrar</a>
                 </div>
               </li>
               <li class="nav-item active">
                 <a href="{% url 'listado_notas' %}" class="nav-link">
-                  <i class="fas fa-envelope"></i>
+                  <i class="fas fa-graduation-cap"></i>
                   Portal Calificaciones
                 </a>
               </li>
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
-                  <i class="fas fa-comment-dollar"></i>
+                  <i class="fas fa-university"></i>
                   CEL
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'regcalificaciones' %}"><i class="fas fa-headphones"></i> Registrar Calificación</a>
+                    <a class="dropdown-item" href="{% url 'regcalificaciones' %}"><i class="fas fa-plus-square"></i> Registrar Calificación</a>
 
                 </div>
               </li>
@@ -78,14 +81,13 @@
                   Admin
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-crown"></i> Zona Admin</a>
-                  <a class="dropdown-item" href=""><i class="fas fa-plus-square"></i> Agregar</a>
-                  <a class="dropdown-item" href=""><i class="fas fa-list-ol"></i> Listado</a>
+                  <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-users-cog"></i> Zona Admin</a>
+                  <a class="dropdown-item" href="#"><i class="fas fa-exclamation-triangle"></i> Destruir CEM</a>
                 </div>
               </li>
               <li class="nav-item active">
                 <a href="{% url 'listado_postu' %}" class="nav-link">
-                  <i class="fas fa-home"></i>
+                  <i class="fas fa-user-graduate"></i>
                   Estudiantes
                 </a>
               </li>
@@ -98,7 +100,7 @@
     
   <!--TERMINO MENU-->
 <p></p>
-<h1>LISTADO PROGRAMAS</h1>
+<h1 id="titula">LISTADO PROGRAMAS</h1>
 <p></p>
 <div class="card">
   <div class="container-md">
@@ -135,7 +137,7 @@
                 </a>
               
                 <a href="#" onclick="confirmarEliminacion({{p.idPrograma}})">
-                  <button type="button" class="btn btn-danger">Eliminar</button>
+                  <button type="button" class="btn btn-danger">Eliminar  </button>
                 </a>
             </td>
         </tr>
@@ -171,6 +173,17 @@
     <script src="https://nightly.datatables.net/searchpanes/js/dataTables.searchPanes.min.js"></script>
     <!-- SELECT-->
     <script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+
+
+    <!--INFORME PDF-->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 
 </body>
 </html>

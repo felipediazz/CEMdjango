@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Programas</title>
+    <title >Listar Programas</title>
 
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -21,79 +21,78 @@
 </head>
 <body>
 
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand">
-            <img src="{% static 'core/img/CEM.png' %}" alt="Logo" id="logo">
-          </a>
-    
-          <button class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a href="{% url 'index' %}" class="nav-link">
-                  <i class="fas fa-home"></i>
-                  Inicio
-                </a>
-              </li>
-    
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
-                  <i class="fas fa-comment-dollar"></i>
-                  Programas
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'listado_progra' %}"><i class="fas fa-headphones"></i> Listado</a>
-                    <a class="dropdown-item" href="{% url 'regprogramas' %}"><i class="fab fa-playstation"></i> Registrar</a>
-                </div>
-              </li>
-              <li class="nav-item active">
-                <a href="{% url 'listado_notas' %}" class="nav-link">
-                  <i class="fas fa-envelope"></i>
-                  Portal Calificaciones
-                </a>
-              </li>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand">
+        <img src="{% static 'core/img/CEM.png' %}" alt="Logo" id="logo">
+      </a>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
-                  <i class="fas fa-comment-dollar"></i>
-                  CEL
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'regcalificaciones' %}"><i class="fas fa-headphones"></i> Registrar Calificación</a>
+      <button class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a href="{% url 'index' %}" class="nav-link">
+              <i class="fas fa-home"></i>
+              Inicio
+            </a>
+          </li>
 
-                </div>
-              </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
+              <i class="fas fa-book"></i>
+              Programas
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'listado_progra' %}"><i class="fas fa-list"></i> Listado</a>
+                <a class="dropdown-item" href="{% url 'regprogramas' %}"><i class="fas fa-plus-square"></i> Registrar</a>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'listado_notas' %}" class="nav-link">
+              <i class="fas fa-graduation-cap"></i>
+              Portal Calificaciones
+            </a>
+          </li>
 
-              <li class="nav-item dropdown" id="wiki">
-                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
-                  <i class="fas fa-user-lock"></i>
-                  Admin
-                </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-crown"></i> Zona Admin</a>
-                  <a class="dropdown-item" href=""><i class="fas fa-plus-square"></i> Agregar</a>
-                  <a class="dropdown-item" href=""><i class="fas fa-list-ol"></i> Listado</a>
-                </div>
-              </li>
-              <li class="nav-item active">
-                <a href="{% url 'listado_postu' %}" class="nav-link">
-                  <i class="fas fa-home"></i>
-                  Estudiantes
-                </a>
-              </li>
-            </ul>     
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
+              <i class="fas fa-university"></i>
+              CEL
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'regcalificaciones' %}"><i class="fas fa-plus-square"></i> Registrar Calificación</a>
 
-          </div>
-    
-        </nav>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown" id="wiki">
+            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
+              <i class="fas fa-user-lock"></i>
+              Admin
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-users-cog"></i> Zona Admin</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-exclamation-triangle"></i> Destruir CEM</a>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'listado_postu' %}" class="nav-link">
+              <i class="fas fa-user-graduate"></i>
+              Estudiantes
+            </a>
+          </li>
+        </ul>     
+
       </div>
+
+    </nav>
+  </div>
     
   <!--TERMINO MENU-->
 <p></p>
-<h1>LISTADO PROGRAMAS DISPONIBLES</h1>
+<h1 id="titula">LISTADO PROGRAMAS DISPONIBLES</h1>
 <p></p>
   <div class="container-md">
     <table id="datatable" class="table table-dark table-striped ">
@@ -125,7 +124,7 @@
             <td>
                 
                 <a href="{% url 'postular' p.idPrograma %}">
-                  <button type="button" class="btn btn-primary">Postular</button>
+                  <button type="button" class="btn btn-primary"><i class="fas fa-passport"></i> Postular</button>
                 </a>
 
         {% endfor %}
