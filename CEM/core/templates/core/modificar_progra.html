@@ -41,27 +41,28 @@
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
-              <i class="fas fa-comment-dollar"></i>
+              <i class="fas fa-book"></i>
               Programas
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'listado_progra' %}"><i class="fas fa-headphones"></i> Listado</a>
-                <a class="dropdown-item" href="{% url 'regprogramas' %}"><i class="fab fa-playstation"></i> Registrar</a>
+                <a class="dropdown-item" href="{% url 'listado_progra' %}"><i class="fas fa-list"></i> Listado</a>
+                <a class="dropdown-item" href="{% url 'regprogramas' %}"><i class="fas fa-plus-square"></i> Registrar</a>
+            </div>
           </li>
           <li class="nav-item active">
             <a href="{% url 'listado_notas' %}" class="nav-link">
-              <i class="fas fa-envelope"></i>
+              <i class="fas fa-graduation-cap"></i>
               Portal Calificaciones
             </a>
           </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
-              <i class="fas fa-comment-dollar"></i>
+              <i class="fas fa-university"></i>
               CEL
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'regcalificaciones' %}"><i class="fas fa-headphones"></i> Registrar Calificación</a>
+                <a class="dropdown-item" href="{% url 'regcalificaciones' %}"><i class="fas fa-plus-square"></i> Registrar Calificación</a>
 
             </div>
           </li>
@@ -72,10 +73,15 @@
               Admin
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-crown"></i> Zona Admin</a>
-              <a class="dropdown-item" href=""><i class="fas fa-plus-square"></i> Agregar</a>
-              <a class="dropdown-item" href=""><i class="fas fa-list-ol"></i> Listado</a>
+              <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-users-cog"></i> Zona Admin</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-exclamation-triangle"></i> Destruir CEM</a>
             </div>
+          </li>
+          <li class="nav-item active">
+            <a href="{% url 'listado_postu' %}" class="nav-link">
+              <i class="fas fa-user-graduate"></i>
+              Estudiantes
+            </a>
           </li>
         </ul>     
 
@@ -90,7 +96,7 @@
 
   <!--TERMINO MENU-->
 
-<h1>MODIFICAR PROGRAMA</h1>
+<h1 id="titula">MODIFICAR PROGRAMA</h1>
 
 <form action="" method="POST">
     {% csrf_token %}
